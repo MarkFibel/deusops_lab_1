@@ -1,4 +1,8 @@
-FROM nginx:alpine
+# Базовый образ Alpine
+FROM alpine:3.18
+
+# Обновляем пакеты и устанавливаем Nginx
+RUN apk add --no-cache nginx
 
 # Копируем кастомный конфиг
 COPY nginx.conf /etc/nginx/nginx.conf
